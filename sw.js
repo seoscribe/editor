@@ -4,7 +4,7 @@
 // this polyfill is useless -- the ServiceWorker will not work in Chrome 40 due to arrow functions
 // self.importScripts('https://seoscribe.net/assets/js/serviceworker-cache-polyfill.js');
 
-const CACHE_VERSION = 4;
+const CACHE_VERSION = 5;
 const CURRENT_CACHES = { prefetch: 'editor-v' + CACHE_VERSION };
 
 self.addEventListener('install', event => {
