@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-night-mode="off" data-font-loaded="false" data-menu-open="false" data-has-html="false">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no">
+    <base href="https://seoscribe.net/">
+    <link rel="manifest" href="https://seoscribe.net/manifest.json">
+    <link rel="canonical" href="https://seoscribe.net">
+    <link rel="publisher" href="https://plus.google.com/+">
+    <link rel="icon" href="https://seoscribe.net/assets/img/favicon.ico">
+    <meta name="format-detection" content="telephone=no;email=no">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="referrer" content="origin">
+    <meta name="description" content="">
+    <title>SEO Scribe &middot; the SEO Text Editor &middot; </title>
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <style>
+      html{-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-webkit-font-smoothing:subpixel-antialiased;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-overflow-scrolling:touch;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;touch-action:manipulation;font:normal normal 400 16px/1.2 Roboto,-apple-system,BlinkMacSystemFont,Helvetica,Arial,Helmet,Freesans,sans-serif}
+      *,:before,:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;touch-action:manipulation;margin:0;padding:0;border:0;font:inherit}:active,:focus{outline:0}article,footer,header,main,nav,section,video{display:block}
+      html,body{height:100%;background:#eee;overflow:hidden}
+      a{-webkit-text-decoration-skip:objects;text-decoration:none}button,input,textarea{-webkit-appearance:none;-webkit-border-radius:0;border-radius:0;background:0 0}button,img,video{-webkit-touch-callout:none}button,a,img,video{-webkit-user-select:none;-moz-user-select:none}button,a{color:inherit;cursor:pointer}textarea{resize:none}[disabled]{opacity:.6;cursor:not-allowed;-webkit-pointer-events:none;pointer-events:none}[hidden]{display:none}video::-webkit-media-controls{display:none}video::-webkit-media-controls-play-button{display:none}video::-webkit-media-controls-volume-slider{display:none}video::-webkit-media-controls-mute-button{display:none}video::-webkit-media-controls-timeline{display:none}video::-webkit-media-controls-current-time-display{display:none}details summary::-webkit-details-marker{display:none}details summary::-moz-details-marker{display:none}details summary::details-marker{display:none}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:#111;-webkit-border-radius:4px;border-radius:4px}::-webkit-scrollbar-track{background-color:transparent;background:rgba(0,0,0,0)}::selection{background:#111;color:#fff}::-moz-selection{background:#111;color:#fff}
+      aside {
+        -webkit-overflow-scrolling: touch;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 300px;
+        padding: 16px 16px 0 16px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background: #eee;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 10px 100px rgba(50,50,93,.1), 0 5px 35px rgba(50,50,93,.15), 0 0 15px rgba(0,0,0,.1);
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        transition: .3s cubic-bezier(.4,0,.2,1) opacity,.3s cubic-bezier(.4,0,.2,1) visibility;
+      }
+      [data-menu-open="true"] aside {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+      h1 {
+        position: relative;
+        background: #eee;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -2px;
+        line-height: 36px;
+        color: #555;
+        margin-bottom: 16px;
+      }
+      h1:before {
+        content:'';
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: -3px;
+        background-image:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cpath%20fill%3D%22%23555%22%20d%3D%22M40.8%2019c-.5.2-.8.8-.7%201.3.8%201.8%201%203.8%201%205.7%200%2010.5-8.4%2019-19%2019S3%2036.5%203%2026%2011.5%207%2022%207c2%200%204%20.3%205.7%201%20.5%200%201-.3%201.2-.8%200-.5-.3-1-.8-1.2-2-.7-4.2-1-6.3-1C10.3%205%201%2014.4%201%2026s9.4%2021%2021%2021%2021-9.4%2021-21c0-2-.3-4.3-1-6.3%200-.5-.7-.8-1.2-.6z%22/%3E%3Cpath%20fill%3D%22%23ffc107%22%20d%3D%22M38.7%205L20%2024l-2%206%206-2L43%209.4M44.3%208L46%206c1.3-1%201.3-3%200-4-1-1.3-3-1.3-4%200l-2%201.7L44.4%208z%22/%3E%3C/svg%3E);
+        background-size: 30px 30px;
+        background-repeat: no-repeat;
+        height: 32px;
+        width: 32px;
+      }
+      h1 span {
+        margin-left: 34px;
+      }
+      aside details, aside div {
+        position: relative;
+        padding: 0 0 16px 0;
+      }
+      #btn_menu {
+        position: absolute;
+        z-index: 100;
+        display: block;
+        width: 38px;
+        height: 38px;
+        top: 16px;
+        right: 8px;
+        font-size: 38px;
+        color: #666;
+      }
+      #btn_menu:after {
+        content:'\2261';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        line-height: 38px;
+      }
+      main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+      main textarea[disabled] {
+        opacity: 1;
+      }
+      main textarea {
+        -webkit-overflow-scrolling: touch;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 16px 48px 16px 16px;
+        background: #fff;
+        font-family: Cousine,Consolas,Menlo,Monaco,Courier,monospace;
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        resize: none;
+      }
+      summary, label[for] {
+        display: block;
+        position: relative;
+        font-size: 10px;
+        cursor: pointer;
+        color: #777;
+        text-transform: uppercase;
+        z-index: 2;
+      }
+      summary > span, label[for] > span {
+        position: absolute;
+        margin-left: 1ex;
+        width: 12px;
+        height: 12px;
+        font-size: 9px;
+        text-align: center;
+        background-color: #f8f8f8;
+        border: 1px solid #c6c6c6;
+        border-radius: 50%;
+      }
+      summary > span:hover, label[for] > span:hover {
+        color: #3f51b5;
+        border-color: #3f51b5;
+      }
+      output {
+        display: block;
+        border-bottom: 3px solid transparent;
+      }
+      .btns {
+        font-size: 0;
+        white-space: nowrap;
+      }
+      .exp {
+        display: inline-block;
+        width: 25%;
+        padding: 0;
+      }
+      .exp:last-of-type {
+        margin-right: 0;
+      }
+      aside button {
+        display: block;
+        background-color: #f8f8f8;
+        background-image: linear-gradient(180deg,#f8f8f8,#f1f1f1);
+        border: 1px solid #c6c6c6;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        color: #555;
+        height: 36px;
+        line-height: 27px;
+        border-radius: 2px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 700;
+        width: 100%;
+        padding: 0 16px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      aside button:hover {
+        border-color: #999;
+        box-shadow: 0 1px 1px rgba(0,0,0,.2);
+        color: #555;
+      }
+      aside button:focus {
+        border-color: rgb(63,81,181);
+        box-shadow: 0 1px 1px rgba(63,81,181,.2);
+        color: rgb(63,81,181);
+      }
+      #keyword {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        border-bottom: 1px dotted #555;
+      }
+      #keyword ~ .overlay {
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: 8px;
+        z-index: 1;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 1px;
+        background: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transition-property: opacity, visibility;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .2s;
+      }
+      #keyword:focus ~ .overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+      .label-switch {
+        border-radius: 32px;
+        cursor: pointer;
+        display: block;
+        height: 32px;
+        position: relative;
+        width: 52px;
+        margin-top:4px;
+      }
+      .label-switch input[type="checkbox"] {
+        display: none;
+      }
+      .label-switch input[type="checkbox"] + .switch {
+        background-color: #f8f8f8;
+        border: 1px solid #c6c6c6;
+        border-radius: 32px;
+        cursor: pointer;
+        height: 32px;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        width: 52px;
+        z-index: 0;
+      }
+      .label-switch input[type="checkbox"] + .switch:before {
+        position: absolute;
+        top: 2px;
+        right: 0;
+        bottom: 0;
+        left: 2px;
+        background-color: #f8f8f8;
+        border-radius: 32px;
+        content: '';
+        height: 28px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        width: 48px;
+        z-index: 1;
+      }
+      .label-switch input[type="checkbox"] + .switch:after {
+        position: absolute;
+        top: 1px;
+        right: 0;
+        bottom: 0;
+        left: 1px;
+        height: 28px;
+        width: 28px;
+        background-color: #f8f8f8;
+        background-image: linear-gradient(180deg,#f8f8f8,#f1f1f1);
+        border-radius: 28px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.4);
+        content: '';
+        transition: left 0.3s ease;
+        z-index: 2;
+      }
+      .label-switch input[type="checkbox"]:checked + .switch {
+        background: #333;
+      }
+      .label-switch input[type="checkbox"]:checked + .switch:before {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+      .label-switch input[type="checkbox"]:checked + .switch:after {
+        left: 22px;
+      }
+      .switch-row {
+        margin-top: 15px;
+      }
+      .warning {
+        font-size: 12px;
+        font-weight: 700;
+        color: #111;
+        background: rgba(255,204,0,.7);
+        padding: 2px 4px;
+        margin-bottom: 1px;
+        border-radius: 2px;
+      }
+      html[data-font-loaded="true"] {
+        font-family: Karla,Roboto,-apple-system,BlinkMacSystemFont,Helvetica,Arial,Helmet,Freesans,sans-serif;
+      }
+      html[data-font-loaded="true"] main textarea {
+        font-family: 'Roboto Mono',Consolas,Inconsolata,Menlo,Cousine,Monaco,Courier,monospace;
+      }
+      [data-menu-open="true"] #btn_menu:after {
+        content:'\00D7';
+      }
+      [data-has-html="false"] .html-warning {
+        display: none;
+      }
+      [data-night-mode="on"],
+      [data-night-mode="on"] body {
+        background: #444;
+        color: #fff;
+      }
+      [data-night-mode="on"] aside {
+        background: #444;
+      }
+      [data-night-mode="on"] summary,
+      [data-night-mode="on"] label[for] {
+        color: #bbb;
+      }
+      [data-night-mode="on"] input[type="text"] {
+        color: #fff;
+      }
+      [data-night-mode="on"] summary > span,
+      [data-night-mode="on"] label[for] > span {
+        background-color: #333;
+        color: #eee;
+        border-color: #333;
+      }
+      [data-night-mode="on"] summary > span:hover,
+      [data-night-mode="on"] label[for] > span:hover {
+        color: #ffcc00;
+        border-color: #ffcc00;
+      }
+      [data-night-mode="on"] aside button {
+        background-color: #333;
+        background-image: linear-gradient(180deg,#484848,#414141);
+        border: 1px solid #333;
+        color: #ccc;
+      }
+      [data-night-mode="on"] aside button:hover {
+        border-color: #222;
+        box-shadow: 0 1px 1px rgba(0,0,0,.2);
+        color: #ccc;
+      }
+      [data-night-mode="on"] aside button:focus {
+        border-color: #ffcc00;
+        box-shadow: 0 1px 1px rgba(255, 204, 0, .2);
+        color: #ffcc00;
+      }
+      [data-night-mode="on"] #keyword ~ .overlay {
+        background: #555;
+      }
+      [data-night-mode="on"] main textarea {
+        background: #555;
+        color: #fff;
+      }
+      [data-night-mode="on"] .label-switch input[type="checkbox"] + .switch {
+        border: 1px solid #444;
+      }
+      [data-night-mode="on"] .label-switch input[type="checkbox"] + .switch:after {
+        background-color: #333;
+        background-image: linear-gradient(180deg,#484848,#414141);
+      }
+      [data-night-mode="on"] h1 {
+        background: #444;
+        color: #bbb;
+      }
+      [data-night-mode="on"] h1:before {
+        background-image:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cpath%20fill%3D%22%23bbb%22%20d%3D%22M40.8%2019c-.5.2-.8.8-.7%201.3.8%201.8%201%203.8%201%205.7%200%2010.5-8.4%2019-19%2019S3%2036.5%203%2026%2011.5%207%2022%207c2%200%204%20.3%205.7%201%20.5%200%201-.3%201.2-.8%200-.5-.3-1-.8-1.2-2-.7-4.2-1-6.3-1C10.3%205%201%2014.4%201%2026s9.4%2021%2021%2021%2021-9.4%2021-21c0-2-.3-4.3-1-6.3%200-.5-.7-.8-1.2-.6z%22/%3E%3Cpath%20fill%3D%22%23ffcc00%22%20d%3D%22M38.7%205L20%2024l-2%206%206-2L43%209.4M44.3%208L46%206c1.3-1%201.3-3%200-4-1-1.3-3-1.3-4%200l-2%201.7L44.4%208z%22/%3E%3C/svg%3E);
+      }
+      [data-night-mode="on"] h1:after {
+        background: #444;
+      }
+      [data-night-mode="on"] #btn_menu {
+        color: #bbb;
+      }
+      @media screen and (min-width: 414px){
+        aside {
+          padding: 32px 32px 0 32px;
+        }
+        main textarea {
+          padding: 32px 48px 32px 32px;
+        }
+      }
+      @media screen and (min-width: 737px){
+        main {
+          right: 300px;
+        }
+        aside {
+          box-shadow: none;
+          opacity: 1;
+          visibility: visible;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+        #btn_menu {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 768px) and (min-height: 580px){
+        main textarea {
+          padding: 99px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <aside>
+      <h1>
+        <span>SEO Scribe</span>
+      </h1>
+      <details open>
+        <summary>Keyword</summary>
+        <input id="keyword" type="text" tabindex="2" placeholder="Enter keyword" pattern=".{1,}" required>
+        <span class="overlay" aria-hidden="true" role="presentation"></span>
+      </details>
+      <details open>
+        <summary>Keyword density <span title="Percentage of total words that are keywords. Should be more than 0% and less than 5%.">?</span></summary>
+        <output id="keyword_density">0%</output>
+      </details>
+      <details open>
+        <summary>Related word density <span title="Percentage of total words that are words related to keyword. Should be more than 0% and less than 10%.">?</span></summary>
+        <output id="rel_density">0%</output>
+      </details>
+      <details open>
+        <summary>LSI word density <span title="Percentage of total words that are latent semantic keywords/phrases. Should be more than 0% and less than 10%.">?</span></summary>
+        <output id="lsi_density">0%</output>
+      </details>
+      <details open>
+        <summary>Sentences with transition words <span title="Transition words are a good indicator of better quality content, and should appear in your content where possible.">?</span></summary>
+        <output id="trs_density">0%</output>
+      </details>
+      <details open>
+        <summary>Ease of Readability <span title="A measurement of how easy your content is to read, using the Flesch-Kincaid reading ease metric. Lower is better.">?</span></summary>
+        <output id="readability_score">N/A</output>
+      </details>
+      <details open hidden>
+        <summary>SMOG Score <span title="The SMOG index is an alternative metric for readability, more accurate than Flesch-Kincaid. A lower score indicates a more readable text.">?</span></summary>
+        <output id="smog_score">N/A</output>
+      </details>
+      <details open>
+        <summary>Keyword in first paragraph <span title="Your keyword should appear in the first paragraph of your content.">?</span></summary>
+        <output id="keyword_first_para">No</output>
+      </details>
+      <details class="html-warning" open>
+        <summary>Keyword in headings <span title="Your keyword should appear in your headings as well as your title and meta description.">?</span></summary>
+        <output id="keyword_headings">No</output>
+      </details>
+      <details open>
+        <summary>Word count <span title="Total word count of your content. This should be a minimum of 300 words.">?</span></summary>
+        <output id="word_count">0</output>
+      </details>
+      <div class="warning" hidden>
+        0 sentences starting with same word
+      </div>
+      <div class="warning" id="sntc_warn" hidden>
+        Consider shortening some sentences
+      </div>
+      <div class="warning" id="para_warn" hidden>
+        Consider breaking up long paragraphs
+      </div>
+      <div class="warning" hidden>
+        0 transition words/phrases
+      </div>
+      <div class="warning" hidden>
+        0% in passive voice
+      </div>
+      <div class="warning html-warning" id="no_hdngs" hidden>
+        Use headings to structure your content
+      </div>
+      <div class="warning html-warning" id="no_links" hidden>
+        Don't forget to include external links
+      </div>
+      <div class="warning html-warning" id="no_lists" hidden>
+        Consider using lists in your content
+      </div>
+      <div class="warning html-warning" id="no_imgs" hidden>
+        Adding images can improve quality
+      </div>
+      <div class="warning html-warning" id="no_img_alts" hidden>
+        Images should have alternate text
+      </div>
+      <div class="switch-row">
+        <label for="night_mode">Night mode</label>
+        <label class="label-switch">
+          <input type="checkbox" id="night_mode">
+          <div class="switch"></div>
+        </label>
+      </div>
+      <div class="btns">
+        <button type="button" id="save_storage" tabindex="3">Save</button>
+        <button type="button" id="exp_txt" class="exp" tabindex="4" data-txt-type="plain">Txt</button>
+        <button type="button" id="exp_htm" class="exp" tabindex="5" data-txt-type="html">HTML</button>
+        <button type="button" id="exp_pdf" class="exp" tabindex="6" data-txt-type="html" disabled>PDF</button>
+        <button type="button" id="exp_wrd" class="exp" tabindex="7" data-txt-type="html" disabled>Word</button>
+      </div>
+    </aside>
+    <main>
+      <textarea placeholder="Write here, in plain text or HTML.&nbsp;
+HTML will be detected automatically and additional ranking criteria will be displayed." tabindex="1" autocomplete="off" minlength="1" required></textarea>
+    </main>
+    <button id="btn_menu"></button>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=querySelector,Array.prototype.forEach,Array.prototype.filter,Array.prototype.map,Array.prototype.reduce,Element.prototype.classList,XMLHttpRequest"></script>
+    <script src="https://seoscribe.net/assets/js/event-listener-options.shim.js"></script>
+    <script async defer src="https://seoscribe.net/assets/js/editor.js"></script>
+  </body>
+</html>
