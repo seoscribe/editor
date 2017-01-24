@@ -40,17 +40,9 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
-    event.respondWith(
-      self.fetch(event.request.url).catch(() => {
-        return self.caches.match('/offline/');
-      })
-    );
-  } else {
-    event.respondWith(
-      self.caches.match(event.request).then(response => {
-        return response || self.fetch(event.request);
-      })
-    );
-  }
+  event.respondWith(
+    self.caches.match(event.request).then(response => {
+      return response || self.fetch(event.request);
+    })
+  );
 });
