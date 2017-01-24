@@ -76,7 +76,7 @@
     }
 
     if (win.location.protocol === 'https:' && 'serviceWorker' in win.navigator) {
-      win.navigator.serviceWorker.register('https://seoscribe.net/editor/sw.js', {
+      win.navigator.serviceWorker.register('https://seoscribe.net/sw.js', {
         scope: 'https://seoscribe.net/editor/'
       }).then(function (registration) {
         win.console.info('SW registered [' + registration.scope + ']')
