@@ -8,4 +8,4 @@ Essentially, we offload a bunch of computationally expensive Regular Expressions
 
 Data is stored to `localStorage` and the text written can be exported to `txt`,`html`,`rtf`, `docx` and `pdf`.
 
-A ServiceWorker is included to enable immediate load.
+A ServiceWorker is included to enable offline use and prefetching of resources.
