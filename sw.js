@@ -10,8 +10,8 @@ const CURRENT_CACHES = { prefetch: 'editor-v' + CACHE_VERSION };
 self.addEventListener('install', event => {
   const urlsToPrefetch = [
     'https://seoscribe.net/editor/',
-    'https://seoscribe.net/assets/js/editor.js',
-    'https://seoscribe.net/assets/js/editor-worker.js',
+    'https://seoscribe.net/editor/editor.js',
+    'https://seoscribe.net/editor/editor-worker.js',
     'https://seoscribe.net/assets/js/event-listener-options.shim.js',
     'https://seoscribe.net/manifest.json'
   ];
