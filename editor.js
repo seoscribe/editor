@@ -213,6 +213,8 @@
 
   function loadUI () {
     _UI.root.setAttribute('data-font-loaded', 'true');
+    if ('htmlDocx' in win) { _UI.btn_export_docx.removeAttribute('disabled'); }
+    if ('jspdf' in win) { _UI.btn_export_pdf.removeAttribute('disabled'); }
   }
 
   function updateUI (e) {
