@@ -491,7 +491,7 @@
         _dl_link.download = _filename + '.html';
         break;
       case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-        _dl_link.href = htmlDocx.asBlob(_UI.content_field.value);
+        _dl_link.href = htmlDocx.asBlob('<!doctype html><html><head><meta charset="utf-8"></head><body>' + _UI.content_field.value + '</body></html>');
         _dl_link.download = _filename + '.docx';
         break;
       case 'application/pdf':
