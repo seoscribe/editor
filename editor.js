@@ -491,11 +491,13 @@
         _dl_link.download = _filename + '.html';
         break;
       case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-        _dl_link.href = htmlDocx.asBlob('<!doctype html><html><head><meta charset="utf-8"></head><body>' + _UI.content_field.value + '</body></html>');
+        _dl_link.href = win.URL.createObjectURL(
+          win.htmlDocx.asBlob('<!doctype html><html><head><meta charset="utf-8"></head><body>' + _UI.content_field.value + '</body></html>')
+        );
         _dl_link.download = _filename + '.docx';
         break;
       case 'application/pdf':
-        _pdf = new jsPDF();
+        _pdf = new win.jsPDF();
         _pdf.fromHTML(_blob, 15, 15, {'width': 170});
         _pdf.save();
         break;
