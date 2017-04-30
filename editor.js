@@ -26,8 +26,8 @@
     'btn_save': doc.getElementById('save_storage'),
     'btn_export_plain': doc.getElementById('exp_txt'),
     'btn_export_html': doc.getElementById('exp_htm'),
-    'btn_export_docx': doc.getElementById('exp_doc'),
     'btn_export_pdf': doc.getElementById('exp_pdf'),
+    'btn_export_docx': doc.getElementById('exp_wrd'),
     'btn_toggle_menu': doc.getElementById('btn_menu'),
     'chk_night_mode': doc.getElementById('night_mode')
   };
@@ -454,12 +454,12 @@
 
   function exportText (e) {
     var _evt = (e.target || this);
-    var _txt_type = 'text/' + (_evt.getAttribute('data-txt-type') || 'plain');
+    var _txt_type = (_evt.getAttribute('data-txt-type') || 'text/plain');
     var _dl_link = doc.createElement('a');
     var _blob = _txt_type === 'text/html' ?
       ['<!doctype html><html><head><meta charset="utf-8"></head><body>', _UI.content_field.value, '</body></html>'].join('') :
         _UI.content_field.value;
-    var _pdf;
+    var _pdf, _filename;
 
     _evt.setAttribute('disabled', '');
 
@@ -467,37 +467,35 @@
       _evt.removeAttribute('disabled');
     }, 2e3);
 
-    _dl_link.href = createBlob(_txt_type, _blob);
+    _filename = (_keyword || 'untitled') + '-' + (new win.Date().toDateString().split(' ').join('-'));
     _dl_link.textContent = 'Download';
     _dl_link.style.display = 'none';
     _dl_link.addEventListener('click', removeThisEl, {
       passive: true, capture: false, once: true
     });
 
-    if ('download' in _dl_link) {
-      _dl_link.download = [(_keyword || 'untitled'), '-', (new win.Date().toDateString().split(' ').join('-')), (_txt_type === 'text/html' ? '.html' : '.txt')].join('');
-    } else {
+    if (!('download' in _dl_link)) {
       _dl_link.target = '_blank';
       _dl_link.rel = 'noreferrer noopener nofollow';
     }
+    
     switch (_txt_type) {
       case 'text/plain':
         _dl_link.href = createBlob(_txt_type, _blob);
-        _dl_link.download = [(_keyword || 'untitled'), '-', (new win.Date().toDateString().split(' ').join('-')), '.txt'].join('');
+        _dl_link.download = _filename + '.txt';
         break;
       case 'text/html':
         _dl_link.href = createBlob(_txt_type, _blob);
-        _dl_link.download = [(_keyword || 'untitled'), '-', (new win.Date().toDateString().split(' ').join('-')), '.html'].join('');
+        _dl_link.download = _filename + '.html';
+        break;
+      case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+        _dl_link.href = htmlDocx.asBlob(_UI.content_field.value);
+        _dl_link.download = _filename + '.docx';
         break;
       case 'application/pdf':
         _pdf = new jsPDF();
         _pdf.fromHTML(_blob, 15, 15, {'width': 170});
-        _dl_link.href = _pdf.save;
-        _dl_link.download = [(_keyword || 'untitled'), '-', (new win.Date().toDateString().split(' ').join('-')), '.pdf'].join('');
-        break;
-      case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-        _dl_link.href = htmlDocx.asBlob(_UI.content_field.value);
-        _dl_link.download = [(_keyword || 'untitled'), '-', (new win.Date().toDateString().split(' ').join('-')), '.docx'].join('');
+        _pdf.save();
         break;
     }
     _UI.body.appendChild(_dl_link);
