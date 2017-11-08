@@ -458,7 +458,7 @@
     var _evt = (e.target || this);
     var _txt_type = (_evt.getAttribute('data-txt-type') || 'text/plain');
     var _dl_link = doc.createElement('a');
-    var _blob = _txt_type === 'text/html' ?
+    var _blob = (_txt_type === 'text/html' || _txt_type === 'application/pdf') ?
       ['<!doctype html><html><head><meta charset="utf-8"></head><body>', _UI.content_field.value, '</body></html>'].join('') :
         _UI.content_field.value;
     var _pdf, _filename;
