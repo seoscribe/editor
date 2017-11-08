@@ -459,7 +459,7 @@
     var _txt_type = (_evt.getAttribute('data-txt-type') || 'text/plain');
     var _dl_link = doc.createElement('a');
     var _blob = (_txt_type === 'text/html' || _txt_type === 'application/pdf') ?
-      ['<!doctype html><html><head><meta charset="utf-8"></head><body>', _UI.content_field.value, '</body></html>'].join('') :
+      ['<!doctype html><html><head><meta charset="utf-8"></head><body>', (_UI.content_field.value).replace(/(?:\r\n|\r|\n)/g, '<br>'), '</body></html>'].join('') :
         _UI.content_field.value;
     var _pdf, _filename;
 
