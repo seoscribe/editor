@@ -1,5 +1,6 @@
 /*
   editor.js
+  ---------
   Author(s)  : AM Douglas, Lois Atwood
   License    : BSD 3-clause Clear
   URL        : https://github.com/seoscribe/editor
