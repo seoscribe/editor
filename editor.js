@@ -1,6 +1,10 @@
 ;(function (win, doc) {
+  
   'use strict';
+  // spawn web worker for later use
   var _worker;
+
+  // create UI reference object
   var _UI = {
     'root': (doc.documentElement || doc.getElementsByTagName('html')[0]),
     'head': (doc.head || doc.getElementsByTagName('head')[0]),
@@ -31,9 +35,15 @@
     'btn_toggle_menu': doc.getElementById('btn_menu'),
     'chk_night_mode': doc.getElementById('night_mode')
   };
+  
+  // store keyword/phrase
   var _keyword = _UI.keyword_field.value.trim().toLowerCase();
+
+  // instantiate related and LSI keyword variables
   win.rel_words = [];
   win.lsi_words = [];
+
+  // intantiate LSI word objects to store XHR'd data
   win.googleLSIWords = googleLSIWords;
   win.bingLSIWords = bingLSIWords;
 
