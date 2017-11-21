@@ -48,8 +48,24 @@
   win.googleLSIWords = googleLSIWords;
   win.bingLSIWords = bingLSIWords;
 
+  // load app
   initApp();
-
+  
+  /* 
+    f : initApp
+    -------
+    Does: 
+    - Check browser compatibility
+    - Spawn worker from file
+    - Polyfill performance.now, window.URL
+    - Load saved content from localStorage
+    - Register ServiceWorker if supported
+    
+    Triggers:
+    - Event listener setup
+    - First text scan
+    - Asynchronous font load
+  */
   function initApp () {
     if (!('Worker' in win)) {
       throw new win.Error('Please use an up-to-date browser');
