@@ -4,7 +4,9 @@
   Author(s)  : AM Douglas, Lois Atwood
   License    : BSD 3-clause Clear
   URL        : https://github.com/seoscribe/editor
-  Copyright  : SEO Scribe 2017
+  ---------
+  Copyright (c) 2017, A. M. Douglas
+  All rights reserved.
 */
 
 ;(function (win, doc) {
