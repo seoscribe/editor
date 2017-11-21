@@ -130,6 +130,12 @@
     asyncLoadFonts(['https://fonts.googleapis.com/css?family=Karla:400,700&subset=latin-ext','https://fonts.googleapis.com/css?family=Roboto+Mono:400&subset=latin-ext']);
   }
 
+  /* 
+    f : eventWireUp
+    -------
+    Does: 
+    - registers event handlers for all app functions
+  */
   function eventWireUp () {
     win.addEventListener('load', loadUI, {passive: true, capture: false, once: true});
 
@@ -183,6 +189,12 @@
     }
   }
 
+  /* 
+    f : startSEOScribe
+    -------
+    Does: 
+    - checks 
+  */
   function startSEOScribe () {
     if (_keyword !== _UI.keyword_field.value.trim().toLowerCase()) {
       _keyword = _UI.keyword_field.value.trim().toLowerCase();
