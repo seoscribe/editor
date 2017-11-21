@@ -1,8 +1,9 @@
 /*
-  SEO Scribe : editor.js
-  Authors : AM Douglas, Lois Atwood
-  https://github.com/seoscribe/editor
-  Copyright SEO Scribe 2017
+  editor.js
+  Author(s)  : AM Douglas, Lois Atwood
+  License    : BSD 3-clause Clear
+  URL        : https://github.com/seoscribe/editor
+  Copyright  : SEO Scribe 2017
 */
 
 ;(function (win, doc) {
