@@ -2,7 +2,7 @@
   
   'use strict';
   
-  // spawn web worker for later use
+  // create variable for web worker we'll spawn on init
   var _worker;
 
   // create UI reference object
