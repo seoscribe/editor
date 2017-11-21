@@ -1,6 +1,7 @@
 ;(function (win, doc) {
   
   'use strict';
+  
   // spawn web worker for later use
   var _worker;
 
