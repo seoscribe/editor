@@ -162,6 +162,7 @@ function checkParagraphs (paras, keyword) {
 // check sentences for transition words/phrases,
 // and warn about long sentences
 function checkSentences (sntcs) {
+  // this isn't particularly tidy, but it saves on an unnecessary HTTP request
   var _trs_words = ['I mean','above all','accordingly','as a consequence','actually','additionally','admittedly','after this',
                     'afterwards','albeit','all in all','all the same','also','alternatively','although','altogether','and yet',
                     'anyhow','anyway','as I have said','as a final point','as a matter of fact','as a result',
