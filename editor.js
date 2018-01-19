@@ -82,7 +82,7 @@
       throw new win.Error('Please use an up-to-date browser');
     }
 
-    _worker = new win.Worker('https://seoscribe.net/editor/editor-worker.js');
+    _worker = new win.Worker('./editor-worker.js');
 
     if (!('performance' in win)) {
       win.performance = {
@@ -116,8 +116,8 @@
     }
 
     if (win.location.protocol === 'https:' && 'serviceWorker' in win.navigator) {
-      win.navigator.serviceWorker.register('https://seoscribe.net/sw.js', {
-        scope: 'https://seoscribe.net/editor/'
+      win.navigator.serviceWorker.register('/sw.js', {
+        scope: './'
         
       }).then(function (registration) {
         win.console.info('SW registered [' + registration.scope + ']')
