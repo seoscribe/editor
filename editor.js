@@ -359,14 +359,19 @@
 
   function adjustDensityColor (val, el) {
     el.style.width = val + '%';
+    
     if (val >= 15 && val > 14) {
       el.style.borderColor = 'rgba(244,67,54,.7)';
+      
     } else if (val < 14 && val >= 6 && val > 0) {
       el.style.borderColor = 'rgba(255,138,34,.7)';
+      
     } else if (val <= 5 && val >= 4 && val > 0) {
       el.style.borderColor = 'rgba(255,204,0,.7)';
+      
     } else if (val < 4 && val > 0) {
       el.style.borderColor = 'rgba(154,205,50,.7)';
+      
     } else {
       el.style.borderColor = 'rgba(244,67,54,.7)';
     }
@@ -374,14 +379,19 @@
 
   function adjustWordCountColor (val, el) {
     el.style.width = val <= 1000 ? val / 10 + '%' : '100%';
+    
     if (val > 399) {
       el.style.borderColor = 'rgba(154,205,50,.7)';
+    
     } else if (val <= 399 && val > 299) {
       el.style.borderColor = 'rgba(255,204,0,.7)';
+    
     } else if (val <= 299 && val > 199) {
       el.style.borderColor = 'rgba(255,138,34,.7)';
+    
     } else if (val <= 199) {
       el.style.borderColor = 'rgba(244,67,54,.7)';
+    
     } else {
       el.style.borderColor = 'rgba(244,67,54,.7)';
     }
@@ -479,13 +489,13 @@
       resp[1].map(function (datum) {
         return datum[0];
       })
-    ).filter(function(word, idx, arr) {
+    ).filter(function (word, idx, arr) {
       return idx === arr.indexOf(word);
     });
   }
 
   function bingLSIWords (resp) {
-    win.lsi_words = win.lsi_words.concat(resp[1]).filter(function(word, idx, arr) {
+    win.lsi_words = win.lsi_words.concat(resp[1]).filter(function (word, idx, arr) {
       return idx === arr.indexOf(word);
     });
   }
@@ -597,8 +607,8 @@
 
   function toggleMenu () {
     _UI.root.getAttribute('data-menu-open') === 'true'
-      ? _UI.root.setAttribute('data-menu-open','false')
-        : _UI.root.setAttribute('data-menu-open','true');
+      ? _UI.root.setAttribute('data-menu-open', 'false')
+        : _UI.root.setAttribute('data-menu-open', 'true');
   }
 
   function asyncLoadFonts (urls) {
