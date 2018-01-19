@@ -162,6 +162,7 @@ function checkParagraphs (paras, keyword) {
 // check sentences for transition words/phrases,
 // and warn about long sentences
 function checkSentences (sntcs) {
+  
   // this isn't particularly tidy, but it saves on an unnecessary HTTP request
   var _trs_words = ['I mean','above all','accordingly','as a consequence','actually','additionally','admittedly','after this',
                     'afterwards','albeit','all in all','all the same','also','alternatively','although','altogether','and yet',
@@ -192,13 +193,13 @@ function checkSentences (sntcs) {
                     'to start with','to sum up','to summarize','to tell the truth','to the end that','under those circumstances',
                     'unless,what is more','whatever happens','when in fact','whereas','whichever happens','while',
                     'with regards to','with this in mind'];
-  var _tc = 0;
+  var _tc      = 0;
   var _sntc_wc = 0;
-  var _warn = false;
-  var i = sntcs.length;
-  var j = 0;
-  var m = _trs_words.length;
-  var n = 0;
+  var _warn    = false;
+  var i        = sntcs.length;
+  var j        = 0;
+  var m        = _trs_words.length;
+  var n        = 0;
 
   if (i > 0) {
     for (; j < i; ++j) {
@@ -307,7 +308,8 @@ function getSMOGScore (sntcs, wrds) {
   if (_p_syll > 0) {
     _smog = (1.0430 * self.Math.sqrt(_p_syll * (30 / sntcs.length)) + 3.1291).toFixed(1);
   }
-
+  
+  // theoretically, the result can be in excess of 100, so we impose hard limits
   return _smog > 100 ? '100.0' : _smog < 0 ? '0.0' : _smog;
 }
 
