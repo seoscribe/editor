@@ -27,18 +27,18 @@ function respondWithData (e) {
 // now we pass these in as parameters to our analysis function
 // returns obj or undefined
 function analyseText (keyword, plain, rel_wrds, lsi_wrds) {
-  var _wc = 0;         // total word count
-  var _kc = 0;         // total keyword count
-  var _rc = 0;         // total related word count
-  var _lc = 0;         // total LSI word count
-  var _rdblty = 0;     // readability score (flesch-kincaid)
-  var _smog = 0;       // readability score (SMOG: only valid for 30+ sentences)
-  var _wrds = [];      // all words
-  var _paras = [];     // all paragraphs
-  var _sntcs = [];     // all sentences
-  var _psv_v = [];     // all instances of passive voice (approximate)
-  var _prd_lc = [];    // all instances of a period followed by a lowercase character, indicating a mistake
-  var _all_uc = [];    // all instances of ALL CAPS text, typically not found in quality articles
+  var _wc        = 0;  // total word count
+  var _kc        = 0;  // total keyword count
+  var _rc        = 0;  // total related word count
+  var _lc        = 0;  // total LSI word count
+  var _rdblty    = 0;  // readability score (flesch-kincaid)
+  var _smog      = 0;  // readability score (SMOG: only valid for 30+ sentences)
+  var _wrds      = []; // all words
+  var _paras     = []; // all paragraphs
+  var _sntcs     = []; // all sentences
+  var _psv_v     = []; // all instances of passive voice (approximate)
+  var _prd_lc    = []; // all instances of a period followed by a lowercase character, indicating a mistake
+  var _all_uc    = []; // all instances of ALL CAPS text, typically not found in quality articles
   var _sntc_data = []; // prepped to hold return values of sentence analysis
   var _para_data = []; // prepped to hold return values of paragraph analysis
 
