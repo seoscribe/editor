@@ -440,6 +440,7 @@
     if (typeof word !== 'string') {
       return word;
     }
+    
     return word.trim().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,'').toLowerCase();
   }
 
@@ -454,6 +455,7 @@
       _qs = _keyword.split(' ').map(function (word) {
         return win.encodeURIComponent(clean(word));
       }).join('+');
+      
     } else {
       _qs = _keyword;
     }
