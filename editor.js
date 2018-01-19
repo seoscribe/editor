@@ -5,7 +5,7 @@
   License    : BSD 3-clause Clear
   URL        : https://github.com/seoscribe/editor
   ---------
-  Copyright (c) 2017, SEO Scribe Ltd
+  Copyright (c) 2018, SEO Scribe Ltd
   All rights reserved.
 */
 
