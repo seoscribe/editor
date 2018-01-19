@@ -9,3 +9,7 @@ Essentially, we offload a bunch of computationally expensive Regular Expressions
 Data is stored to `localStorage` and the text written can be exported to `txt`,`html`,`rtf`, `docx` and `pdf`.
 
 A ServiceWorker is included to enable offline use and prefetching of resources.
+
+A CORS proxy is more or less a requirement for the editor to function, as we retrieve keyword suggestions from multiple external web services.
+
+In the long term, a keyword suggestion API could be built into a back-end service bespoke to this application. While there is no better place to obtain keyword suggestions than the search engines themselves, the web services we query may one day be closed to external access, and thus a future-proof solution would include a bespoke solution with as close an approximation to search engine algorithms as possible.
