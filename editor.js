@@ -237,8 +237,8 @@
     }
 
     _worker.postMessage({
-      'keyword': _keyword,
-      'plain': (!!_has_html ? parseHTML(_txt_to_process) : _txt_to_process),
+      'keyword':  _keyword,
+      'plain':    (!!_has_html ? parseHTML(_txt_to_process) : _txt_to_process),
       'rel_wrds': win.rel_words,
       'lsi_wrds': win.lsi_words
     });
@@ -253,10 +253,10 @@
     updateUI({
       'html_data': {
         'headings': _doc.body.querySelectorAll('h1,h2,h3,h4,h5,h6,header'),
-        'links': _doc.querySelectorAll('a[href]').length,
-        'lists': _doc.querySelectorAll('ul li,ol li,dl dd').length,
-        'images': _doc.querySelectorAll('img[src]').length,
-        'no_alts': _doc.querySelectorAll('img:not([alt])').length
+        'links':    _doc.querySelectorAll('a[href]').length,
+        'lists':    _doc.querySelectorAll('ul li,ol li,dl dd').length,
+        'images':   _doc.querySelectorAll('img[src]').length,
+        'no_alts':  _doc.querySelectorAll('img:not([alt])').length
       }
     });
 
