@@ -220,7 +220,9 @@
 
   function checkContent () {
     var _txt_to_process = _UI.content_field.value;
-    var _has_html = !!_txt_to_process && _txt_to_process.match(/<\/?[\w\s="/.':;#-\/\?]+>+[\/?[\w\s="/.':;#-\/\?]+<\/?[\w\s="/.':;#-\/\?]+>/gi) ? true : false;
+    var _has_html = !!_txt_to_process && 
+                      _txt_to_process.match(/<\/?[\w\s="/.':;#-\/\?]+>+[\/?[\w\s="/.':;#-\/\?]+<\/?[\w\s="/.':;#-\/\?]+>/gi) ? 
+                        true : false;
 
     if ('localStorage' in win ) {
       win.localStorage.setItem('autosaved_txt', _txt_to_process);
