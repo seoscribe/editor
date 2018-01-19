@@ -118,10 +118,13 @@
     if (win.location.protocol === 'https:' && 'serviceWorker' in win.navigator) {
       win.navigator.serviceWorker.register('https://seoscribe.net/sw.js', {
         scope: 'https://seoscribe.net/editor/'
+        
       }).then(function (registration) {
         win.console.info('SW registered [' + registration.scope + ']')
+        
       }).catch(function (err) {
         win.console.warn('SW failed to register [' + err + ']')
+        
       });
     }
 
@@ -340,12 +343,16 @@
     for (; h < results.headings.length; ++h) {
       if (matchString(results.headings[h].textContent, _keyword, false) > 0) {
         _hc++;
+        
       } else {
+        
         for (; j < win.rel_words.length; ++j) {
           if (matchString(results.headings[h].textContent, win.rel_words[j], true) > 0) {
             _hc++;
             break;
+            
           } else {
+            
             for (; m < win.lsi_words.length; ++m) {
               if (matchString(results.headings[h].textContent, win.lsi_words[m], true) > 0) {
                 _hc++;
@@ -458,8 +465,10 @@
     uris.forEach(function (uri) {
       var _querystring = generateQueryString();
       var _xhr = new win.XMLHttpRequest();
+      
       _xhr.open('GET', win.location.protocol + uri + _querystring, true);
       _xhr.responseType = 'json';
+      
       _xhr.onreadystatechange = function () {
         if (_xhr.readyState === 4 && _xhr.status >= 200 && _xhr.status < 300) {
           win.rel_words = win.rel_words.concat(
@@ -469,9 +478,11 @@
           );
         }
       };
+      
       _xhr.onerror = _xhr.onabort = _xhr.ontimeout = function () {
         win.console.error('XHR failed or cancelled: ' + _xhr.status);
       };
+      
       _xhr.send(null);
     });
   }
@@ -505,9 +516,11 @@
 
   function saveToStorage (e) {
     var _evt = (e.target || this);
+    
     if ('localStorage' in win) {
       win.localStorage.setItem('autosaved_txt', _UI.content_field.value);
       win.localStorage.setItem('autosaved_kw', _keyword);
+    
       if (typeof _evt !== 'undefined' && 'setAttribute' in _evt) {
         _evt.textContent = 'Saved';
         _evt.setAttribute('disabled', '');
@@ -551,16 +564,19 @@
         _dl_link.href = createBlob(_txt_type, _blob);
         _dl_link.download = _filename + '.txt';
         break;
+        
       case 'text/html':
         _dl_link.href = createBlob(_txt_type, _blob);
         _dl_link.download = _filename + '.html';
         break;
+        
       case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
         _dl_link.href = win.URL.createObjectURL(
           win.htmlDocx.asBlob('<!doctype html><html><head><meta charset="utf-8"></head><body>' + _UI.content_field.value + '</body></html>')
         );
         _dl_link.download = _filename + '.docx';
         break;
+        
       case 'application/pdf':
         _pdf = new win.jsPDF();
         _pdf.fromHTML(_blob, 15, 15, {'width': 170});
