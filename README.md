@@ -2,7 +2,7 @@
 
 The source code for the SEO Scribe text editor.
 
-The text editor listens to the `keyup` event, among others, and sends the text entered to a Web Worker, which processes the text and returns a series of numbers which are to be displayed in the UI.
+The text editor listens to the `keyup` event, among others, and sends the text entered to a Web Worker, which processes the text and returns a series of numbers which are reflected in the UI.
 
 Essentially, we offload a bunch of computationally expensive Regular Expressions to a worker thread.
 
