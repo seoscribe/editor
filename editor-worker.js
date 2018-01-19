@@ -162,7 +162,35 @@ function checkParagraphs (paras, keyword) {
 // check sentences for transition words/phrases,
 // and warn about long sentences
 function checkSentences (sntcs) {
-  var _trs_words = ['I mean','above all','accordingly','as a consequence','actually','additionally','admittedly','after this','afterwards','albeit','all in all','all the same','also','alternatively','although','altogether','and yet','anyhow','anyway','as I have said','as a final point','as a matter of fact','as a result','as an illustration','as for','as has been mentioned','as has been noted','as long as','as was previously stated','as well','at any rate','at first','at last','be that as it may','because of the fact','before this','besides','briefly','but','but also','but even so','by the same token','by the way','by way of contrast','by way of example','concerning','consequently','considering','conversely','despite','due to the fact','either','either way','equally','ergo','especially','even if','even more','even though','eventually','finally','first of all','firstly','for a start','for as much as','for example','for fear','for instance','for one thing','for starters','for the purpose of','for the simple reason that','for this reason','further','furthermore','given that','given these points','granted that','granting that','hence','however','if not','if so','in a like manner','in a word','in addition to','in all honesty','in any case','in any event','in as much as','in case','in conclusion','in consequence','in contrast','in either case','in either event','in fact','in light of the fact','in order that','in order to','in other words','in particular','in short','in spite of','in summary','in that case','in that since','in the end','in the event that','in the first place','in the hope that','in the same way','in view of the fact','incidentally','including','indeed','initially','instead','last but not least','lastly','lest','let alone','likewise','long story short','more importantly','moreover','much less','namely','neither','nevertheless','next','nonetheless','nor','not only','not to mention','notably','notwithstanding','on the condition that','on the other hand','on the subject of','on the whole','only if','or at least','otherwise','overall','owing to the fact','particularly','previously','provided that','providing that','rather','regarding','regardless','secondly','seeing that','similarly','so as to','so long as','so much so that','so that','speaking of which','specifically','still','subsequently','such as','that being the case','that is to say','therefore','thirdly','though','thus','to be brief','to begin with','to change the topic','to conclude','to get back to the point','to illustrate','to put it another way','to put it briefly','to resume','to return to the subject','to say nothing of','to start with','to sum up','to summarize','to tell the truth','to the end that','under those circumstances','unless,what is more','whatever happens','when in fact','whereas','whichever happens','while','with regards to','with this in mind'];
+  var _trs_words = ['I mean','above all','accordingly','as a consequence','actually','additionally','admittedly','after this',
+                    'afterwards','albeit','all in all','all the same','also','alternatively','although','altogether','and yet',
+                    'anyhow','anyway','as I have said','as a final point','as a matter of fact','as a result',
+                    'as an illustration','as for','as has been mentioned','as has been noted','as long as',
+                    'as was previously stated','as well','at any rate','at first','at last','be that as it may',
+                    'because of the fact','before this','besides','briefly','but','but also','but even so','by the same token',
+                    'by the way','by way of contrast','by way of example','concerning','consequently','considering','conversely',
+                    'despite','due to the fact','either','either way','equally','ergo','especially','even if','even more',
+                    'even though','eventually','finally','first of all','firstly','for a start','for as much as','for example',
+                    'for fear','for instance','for one thing','for starters','for the purpose of','for the simple reason that',
+                    'for this reason','further','furthermore','given that','given these points','granted that','granting that',
+                    'hence','however','if not','if so','in a like manner','in a word','in addition to','in all honesty',
+                    'in any case','in any event','in as much as','in case','in conclusion','in consequence','in contrast',
+                    'in either case','in either event','in fact','in light of the fact','in order that','in order to',
+                    'in other words','in particular','in short','in spite of','in summary','in that case','in that since',
+                    'in the end','in the event that','in the first place','in the hope that','in the same way',
+                    'in view of the fact','incidentally','including','indeed','initially','instead','last but not least',
+                    'lastly','lest','let alone','likewise','long story short','more importantly','moreover','much less',
+                    'namely','neither','nevertheless','next','nonetheless','nor','not only','not to mention','notably',
+                    'notwithstanding','on the condition that','on the other hand','on the subject of','on the whole','only if',
+                    'or at least','otherwise','overall','owing to the fact','particularly','previously','provided that',
+                    'providing that','rather','regarding','regardless','secondly','seeing that','similarly','so as to',
+                    'so long as','so much so that','so that','speaking of which','specifically','still','subsequently',
+                    'such as','that being the case','that is to say','therefore','thirdly','though','thus','to be brief',
+                    'to begin with','to change the topic','to conclude','to get back to the point','to illustrate',
+                    'to put it another way','to put it briefly','to resume','to return to the subject','to say nothing of',
+                    'to start with','to sum up','to summarize','to tell the truth','to the end that','under those circumstances',
+                    'unless,what is more','whatever happens','when in fact','whereas','whichever happens','while',
+                    'with regards to','with this in mind'];
   var _tc = 0;
   var _sntc_wc = 0;
   var _warn = false;
