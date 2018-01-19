@@ -213,7 +213,8 @@
     }
 
     getRelatedWords(['//api.datamuse.com/words?ml=']);
-    getLSIWords(['//suggestqueries.google.com/complete/search?client=youtube&hl=en&jsonp=googleLSIWords&q=','//api.bing.com/osjson.aspx?JsonType=callback&JsonCallback=bingLSIWords&query=']);
+    getLSIWords(['//suggestqueries.google.com/complete/search?client=youtube&hl=en&jsonp=googleLSIWords&q=',
+                 '//api.bing.com/osjson.aspx?JsonType=callback&JsonCallback=bingLSIWords&query=']);
     checkContent();
   }
 
