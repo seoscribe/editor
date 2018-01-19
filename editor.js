@@ -271,8 +271,13 @@
 
   function loadUI () {
     _UI.root.setAttribute('data-font-loaded', 'true');
-    if ('htmlDocx' in win) { _UI.btn_export_docx.removeAttribute('disabled'); }
-    if ('jspdf' in win) { _UI.btn_export_pdf.removeAttribute('disabled'); }
+    if ('htmlDocx' in win) {
+      _UI.btn_export_docx.removeAttribute('disabled');
+    }
+    
+    if ('jspdf' in win) {
+      _UI.btn_export_pdf.removeAttribute('disabled');
+    }
   }
 
   function updateUI (e) {
@@ -359,8 +364,10 @@
                 break;
               }
             }
+            
           }
         }
+        
       }
     }
 
@@ -490,7 +497,7 @@
   }
 
   function getLSIWords (uris) {
-    uris.forEach(function(uri){
+    uris.forEach(function (uri) {
       var _querystring = generateQueryString();
       var _script = doc.createElement('script');
       _script.async = !0;
