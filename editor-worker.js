@@ -116,19 +116,19 @@ function analyseText (keyword, plain, rel_wrds, lsi_wrds) {
   // crucial: here we return the message data object
   // use an object literal to avoid adding to the lookup chain or creating more variables
   return {
-    'word_count': _wc,
-    'keyword_density': (_kc / _wc * 100 << 0),
-    'related_word_density': (_rc / _wc * 100 << 0),
-    'lsi_word_density': (_lc / _wc * 100 << 0),
+    'word_count':              _wc,
+    'keyword_density':         (_kc / _wc * 100 << 0),
+    'related_word_density':    (_rc / _wc * 100 << 0),
+    'lsi_word_density':        (_lc / _wc * 100 << 0),
     'transition_word_density': (_sntc_data[0] / _sntcs.length * 100 << 0),
-    'readability': _rdblty,
-    'smog_readability': _smog,
-    'passive_voice': _psv_v,
-    'period_lowercase': _prd_lc,
-    'all_caps': _all_uc,
-    'keyword_in_first_para': _para_data[0],
-    'paragraphs_too_long': _para_data[1],
-    'sentences_too_long': _sntc_data[1]
+    'readability':             _rdblty,
+    'smog_readability':        _smog,
+    'passive_voice':           _psv_v,
+    'period_lowercase':        _prd_lc,
+    'all_caps':                _all_uc,
+    'keyword_in_first_para':   _para_data[0],
+    'paragraphs_too_long':     _para_data[1],
+    'sentences_too_long':      _sntc_data[1]
   };
 }
 
