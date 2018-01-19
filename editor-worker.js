@@ -282,6 +282,9 @@ function getSMOGScore (sntcs, wrds) {
   return _smog > 100 ? '100.0' : _smog < 0 ? '0.0' : _smog;
 }
 
+// self-explanatory
+// we detect syllables by seeking vowels in words, because
+// where there is a vowel, there is a syllable
 function countSyllables (word) {
   var _wrd = clean(word);
 
